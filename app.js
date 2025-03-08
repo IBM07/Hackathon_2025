@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // Serve uploaded files
 
 // Connect to MongoDB Atlas
-const dbURI = 'mongodb+srv://ibrahimaejaz:Neymar%40321@hackathon.l5ski.mongodb.net/testDB?retryWrites=true&w=majority&appName=Hackathon';
+const dbURI = 'Your_MongoDB_URI';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Connected to MongoDB Atlas'))
     .catch(err => console.error('Error connecting:', err));
