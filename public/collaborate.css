@@ -1,0 +1,360 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set base font and background color */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height:100px;
+}
+
+
+header h1 {
+    font-size: 1.5rem;
+    color: #ff0000;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ff0000;
+}
+
+/* Container for sidebar and main content */
+.container {
+    display: flex;
+    margin-top: 20px;
+}
+
+/* Sidebar styling */
+aside {
+    width: 200px;
+    background-color: #fff;
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: relative; /* Change to relative */
+    overflow-y: auto;
+    margin-top: -20px; /* Adjust this value as needed */
+    position: fixed;
+}
+
+.sidebar {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar li a {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333; /* Default color for links */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Added color transition */
+    font-weight: 500;
+}
+
+.sidebar li a:hover {
+    background-color: #ffebeb; /* Soft red highlight on hover */
+    color: #ff0000; /* Text color matches the highlight */
+    font-weight: 600; /* Makes hovered item bold */
+}
+
+.sidebar li a.active {
+     /* Active link background */
+     /* Text color for active link */
+    font-weight: 600;
+    border-left: 4px solid #fff; /* White left border for active link */
+    text-decoration: none; /* Removes underline */
+}
+
+/* Main content area */
+main {
+    flex-grow: 1;
+    margin-left: 220px; /* Width of the sidebar + some gap */
+    padding: 20px;
+}
+
+/* Video grid styling */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    overflow: hidden;
+}
+
+.video {
+    background-color: #fff;
+    width: 320px; /* Set a fixed width */
+    height: 200px; /* Set the height to match the width */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+.video:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.video img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.video-info {
+    padding: 15px;
+}
+
+.video-info h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.video-info p {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    aside {
+        width: 60px;
+    }
+
+    .sidebar li a {
+        justify-content: center;
+    }
+
+    .sidebar li a span {
+        display: none;
+    }
+
+    main {
+        margin-left: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    header nav ul li {
+        margin-left: 10px;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Styling for the search bar and button */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0; /* Adds space around the search bar */
+    padding: 10px 20px;
+    width: 100%;
+}
+
+#search-box {
+    flex-grow: 1; /* Ensures the input takes up available space */
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    max-width: 600px; /* Max width to prevent excessive size */
+    transition: border-color 0.3s ease;
+}
+
+#search-box:focus {
+    border-color: #ff0000;
+    outline: none;
+}
+
+#search-btn {
+    padding: 15px 25px;
+    margin-left: 10px;
+    font-size: 16px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#search-btn:hover {
+    background-color: #cc0000;
+}
+
+/* General Styling for the Section */
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Grid Container for Collaborator Profiles */
+.collaborate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+/* Individual Collaborator Card */
+.collaborator {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.collaborator:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.collaborator img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Collaborator Info Section */
+.collaborator-info {
+    padding: 15px;
+}
+
+.collaborator-info h3 {
+    font-size: 1.25rem;
+    color: #333;
+    margin: 0 0 10px;
+}
+
+.collaborator-info p {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.collaborator-info button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.collaborator-info button:hover {
+    background-color: #0056b3;
+}
+
+.genres {
+    position: absolute; /* Absolute positioning */
+    top: 25%; /* Align vertically */
+    left: 55%; /* Align horizontally */
+    transform: translate(-50%, -50%); /* Adjust for center alignment */
+    z-index: 1000; /* Ensure it appears above other elements if necessary */
+}
+
+.genre-btn {
+    padding: 10px 20px;
+    background-color: #ff0000; /* Primary red color */
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+}
+
+.genre-btn:hover {
+    background-color: #cc0000; /* Darker red on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds hover shadow effect */
+    transform: translateY(-3px); /* Slight upward movement */
+    font-weight: 600; /* Make text bolder on hover */
+}
+
+.show-more-btn {
+    padding: 8px 16px; /* Smaller padding for a smaller button size */
+    background-color: #ff0000; /* Primary red color */
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px; /* Smaller font size for better fit */
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+}
+
+.show-more-btn:hover {
+    background-color: #cc0000; /* Darker red on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds hover shadow effect */
+    transform: translateY(-3px); /* Slight upward movement */
+    font-weight: 600; /* Make text bolder on hover */
+}
+/* Small badge styles */
+.collaborator .collab-badge {
+    width: 30px;   /* Smaller width */
+    height: 30px;  /* Smaller height */
+    margin-right: 10px;  /* Adjust margin as needed */
+}

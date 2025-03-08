@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Create</title>
+    <link rel="stylesheet" href="collaborate.css">
+    <script src="collaborate_2nd.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Open Create</h1>
+            <div class="search-bar">
+                <input type="text" id="search-box" placeholder="Search for creators....">
+                <button id="search-btn">Search</button>
+            </div>
+    </header>
+    <div class="genres">
+        <button class="genre-btn" data-genre="Technology">Technology</button>
+        <button class="genre-btn" data-genre="Gaming">Gaming</button>
+        <button class="genre-btn" data-genre="Education">Education</button>
+        <button class="genre-btn" data-genre="Engineers">Engineers</button>
+        <button class="genre-btn" data-genre="Art">Art</button>
+        <button class="genre-btn" data-genre="Sports">Sports</button>
+        <button class="genre-btn" data-genre="Cooking">Cooking</button>
+        <button class="genre-btn" data-genre="Travel">Travel</button>
+        <button class="genre-btn" data-genre="Fitness">Fitness</button>
+        <button class="genre-btn" data-genre="Science">Science</button>
+        <button class="show-more-btn">Show More</button>
+    </div>
+    <div class="container">
+        <aside>
+            <ul class="sidebar">
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="your_channel.html">Your Channel</a></li>
+                <li><a href="collaborate.html" class="active">Collaborate</a></li>
+            </ul>
+        </aside>
+        <main>
+            <br><br>
+            <section class="collaborate-section">
+                <div class="collaborate-grid" id="collaborate-grid">
+                    <!-- Sample collaborator profiles -->
+                    <div class="collaborator" data-name="Jane Doe">
+                        <img src="badge.png" alt="Collaborator Badge" class="collab-badge"> 
+                        <span class="collab-name">John Doe</span>
+                        <div class="collaborator-info">
+                            <h3>Jane Doe</h3>
+                            <p>Expert in video editing and storytelling.</p>
+                            <button>Contact</button>
+                        </div>
+                    </div>
+                    <div class="collaborator" data-name="John Smith">
+                        <img src="badge.png" alt="Collaborator Badge" class="collab-badge"> 
+                        <span class="collab-name">Jane Smith</span>
+                        <div class="collaborator-info">
+                            <h3>John Smith</h3>
+                            <p>Specializes in animation and graphic design.</p>
+                            <button>Contact</button>
+                        </div>
+                    </div>
+                    <!-- Add more collaborator profiles as needed -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script>
+        const searchBox = document.getElementById('search-box');
+        const searchButton = document.getElementById('search-btn');
+        const collaboratorGrid = document.getElementById('collaborate-grid');
+        const collaborators = document.querySelectorAll('.collaborator');
+        searchButton.addEventListener('click', () => {
+            const searchQuery = searchBox.value.toLowerCase();
+            collaborators.forEach(collaborator => {
+                const name = collaborator.dataset.name.toLowerCase();
+                if (name.includes(searchQuery)) {
+                    collaborator.style.display = 'block';
+                } else {
+                    collaborator.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
